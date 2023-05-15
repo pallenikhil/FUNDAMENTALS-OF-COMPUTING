@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() {
+    int a = 10, b = 20, c = 30;
+    int temp;
+
+    printf("Before swapping: a = %d, b = %d, c = %d\n", a, b, c);
+
+    // Swapping logic
+    temp = a;
+    a = b;
+    b = c;
+    c = temp;
+
+    printf("After swapping: a = %d, b = %d, c = %d\n", a, b, c);
+
+    return 0;
+}
