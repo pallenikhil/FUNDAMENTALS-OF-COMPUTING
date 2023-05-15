@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+
+int main() {
+    char hexadecimal[100];
+    int decimal = 0, length, i;
+
+    printf("Enter hexadecimal number: ");
+    scanf("%s", hexadecimal);
+
+    length = strlen(hexadecimal);
+
+    for (i = 0; hexadecimal[i] != '\0'; i++) {
+        if (hexadecimal[i] >= '0' && hexadecimal[i] <= '9')
+            decimal += (hexadecimal[i] - '0') * pow(16, length - 1 - i);
+        else if (hexadecimal[i] >= 'A' && hexadecimal[i] <= 'F')
+            decimal += (hexadecimal[i] - 55) * pow(16, length - 1 - i);
+        else if (hexadecimal[i] >= 'a' && hexadecimal[i] <= 'f')
+            decimal += (hexadecimal[i] - 87) * pow(16, length - 1 - i);
+        else {
+            printf("Invalid hexadecimal number.\n");
+            return 0;
+        }
+    }
+
+    printf("Decimal number: %d\n", decimal);
+
+    return 0;
+}
